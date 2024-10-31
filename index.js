@@ -15,4 +15,12 @@ app.listen(PORT, () => {
 })
 
 const userRoutes = require('./routes/user.routes')
+const homeRoutes = require('./routes/home.routes')
+const adminRoutes = require('./routes/admin.routes')
+const newsRoutes = require('./routes/news.routes')
+
 app.use('/user', userRoutes)
+app.use('/home', homeRoutes)
+app.use('/admin', adminRoutes)
+app.use('/news', newsRoutes)
+
