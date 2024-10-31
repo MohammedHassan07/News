@@ -39,8 +39,10 @@ To get started with this project, follow the steps below:
 
 ```bash
 git clone https://github.com/MohammedHassan07/news.git
-cd news
+cd news 
+```
 
 
 ```bash
 npm install
+```
