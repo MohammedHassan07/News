@@ -8,10 +8,8 @@ module.exports = function checkIsEmpty(req, res, next) {
         if (data.hasOwnProperty(key)) {
 
             if (data[key] === undefined || data[key] === null || data[key] === '')
-
-                return res.status(400).json({ message: 'All fields are requires' })
+                return res.status(400).json({ message: 'All fields are required' })
         }
-        return res.status(400).json({ message: 'All fields are requires' })
     }
     next()
 }
