@@ -1,4 +1,4 @@
-const express = require('experss')
+const express = require('express')
 const { home, contact } = require('../controller/home.controller')
 
 const route = express.Router()

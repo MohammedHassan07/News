@@ -1,4 +1,4 @@
-# News Website README
+# News Website
 
 ## Overview
 

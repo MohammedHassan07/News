@@ -1,4 +1,4 @@
-const express = require('experss')
+const express = require('express')
 const { getAllNews, getByCategory } = require('../controller/news.contoller')
 
 const route = express.Router()
