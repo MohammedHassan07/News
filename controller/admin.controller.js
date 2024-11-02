@@ -72,9 +72,9 @@ async function addPost(req, res) {
 
         const imgURL = req.file.path
 
-        const { title, article } = req.body
+        const { title, article, category } = req.body
 
-        const data = { title, article, imgUrl: imgURL }
+        const data = { title, article, category, imgUrl: imgURL }
 
         const post = await prisma.post.create({
             data

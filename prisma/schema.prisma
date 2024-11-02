@@ -25,6 +25,7 @@ model Post {
 
   id Int @id @default(autoincrement())
   title String
+  category String
   article String
   imgUrl String
 }
