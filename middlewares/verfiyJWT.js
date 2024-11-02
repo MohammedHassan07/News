@@ -4,10 +4,10 @@ const verifyJWT = async (req, res, next) => {
 
     try {
 
-        const userToken = req.cookies.token.token
+        const userToken = req.cookies.token
 
-        // const userToken = req.cookies.token
-        // console.log(req.cookies)
+        // const userToken = req.cookies.token.token
+        // console.log(req)
 
         if (!userToken) {
 
@@ -33,7 +33,7 @@ const verifyJWT = async (req, res, next) => {
 
         // TODO: sql query
         // const user = await userModel.findOne({ mobile: verifiedToken }).select('-password')
-        req.user = user
+        // req.user = user
         next()
     } catch (error) {
 

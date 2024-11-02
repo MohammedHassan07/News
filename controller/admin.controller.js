@@ -53,11 +53,11 @@ async function login(req, res) {
 
         if (!token) return res.status(500).json({ message: 'Something went wrong' })
 
-            res.cookie('token', token, {
+        res.cookie('token', token, {
 
-                httpOnly: true
-            })
-        return res.status(200).json({ message: 'Login Successfull'} )
+            httpOnly: true
+        })
+        return res.status(200).json({ message: 'Login Successfull' })
 
     } catch (error) {
         console.log(error)
@@ -65,13 +65,27 @@ async function login(req, res) {
     }
 }
 
-
-
-
-
+// function to add post
 async function addPost(req, res) {
 
     try {
+
+        const imgURL = req.file.path
+
+        const { title, article } = req.body
+
+        const data = { title, article, imgUrl: imgURL }
+
+        const post = await prisma.post.create({
+            data
+        })
+
+        // console.log(post)
+
+        if (!post) return res.status(500).json({ message: 'Something went wrong' })
+
+        const postURL = `http://localhost:3000/${post.id}`
+        res.status(201).json({ message: 'Post added successfully', postURL })
 
     } catch (error) {
         console.log(error)
