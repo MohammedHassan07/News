@@ -1,5 +1,6 @@
 const prisma = require("../config/prismaClient")
 
+// function to get all news
 async function getAllNews(req, res) {
 
     try {
@@ -16,6 +17,7 @@ async function getAllNews(req, res) {
     }
 }
 
+// function to get news by category
 async function getByCategory(req, res) {
 
     try {
@@ -38,6 +40,7 @@ async function getByCategory(req, res) {
     }
 }
 
+// function to get news by id
 async function getById(req, res) {
     try {
 
