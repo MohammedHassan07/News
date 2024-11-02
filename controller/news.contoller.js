@@ -1,6 +1,14 @@
+const prisma = require("../config/prismaClient")
+
 async function getAllNews(req, res) {
 
     try {
+
+        const news = await prisma.post.findMany()
+
+        if (!news) return res.status(404).json({ message: 'No post found' })
+
+        res.status(200).json({ news })
 
     } catch (error) {
         console.log(error)
