@@ -27,5 +27,6 @@ model Post {
   title String
   category String
   article String
+  headline String
   imgUrl String
 }

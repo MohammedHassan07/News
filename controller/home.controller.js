@@ -8,7 +8,7 @@ async function home(req, res) {
         if (!news) return res.status(404).json({ message: 'No post found' })
 
         // console.log(news)
-        res.render('home', {news})
+        res.render('home', { news })
 
     } catch (error) {
 

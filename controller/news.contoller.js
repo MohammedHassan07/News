@@ -46,7 +46,7 @@ async function getById(req, res) {
 
         const newsId = Number(req.params.id)
 
-        const news = await prisma.post.findMany({
+        const news = await prisma.post.findUnique({
             where: {
                 id: newsId
             }
@@ -54,7 +54,9 @@ async function getById(req, res) {
 
         if (!news) return res.status(404).json({ message: 'No post found' })
 
-        res.status(200).json({ news })
+        // console.log(news)
+
+        res.status(200).render('news', { news })
     } catch (error) {
         console.log(error)
         res.status(500).json({ message: 'Server Error' })

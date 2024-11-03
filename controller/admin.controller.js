@@ -70,11 +70,11 @@ async function addPost(req, res) {
 
     try {
 
-        const imgURL = req.file.path
+        const imgURL =  'http://localhost:3000/images/' + req.file.filename
 
-        const { title, article, category } = req.body
+        const { title, article, category, headline} = req.body
 
-        const data = { title, article, category, imgUrl: imgURL }
+        const data = { title, article, category, imgUrl: imgURL, headline }
 
         const post = await prisma.post.create({
             data
@@ -84,7 +84,7 @@ async function addPost(req, res) {
 
         if (!post) return res.status(500).json({ message: 'Something went wrong' })
 
-        const postURL = `http://localhost:3000/${post.id}`
+        const postURL = `http://localhost:3000/news/by-id/${post.id}`
         res.status(201).json({ message: 'Post added successfully', postURL })
 
     } catch (error) {

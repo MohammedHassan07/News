@@ -13,7 +13,8 @@ app.use(cookieParser())
 app.engine('hbs', hbs.__express)
 app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'views'))
-// console.log(path.join(__dirname, 'views'))
+app.use(express.static(path.join(__dirname, 'public')))
+hbs.registerPartials('views/partials')
 
 const PORT = process.env.PORT
 app.listen(PORT, () => {
