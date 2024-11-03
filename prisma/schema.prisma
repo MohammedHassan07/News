@@ -14,19 +14,18 @@ datasource db {
 }
 
 model User {
-
-  id Int @id @default(autoincrement())
-  email String  @unique
-  name String?
+  id       Int     @id @default(autoincrement())
+  email    String  @unique
+  name     String?
   password String?
 }
 
 model Post {
-
-  id Int @id @default(autoincrement())
-  title String
-  category String
-  article String
-  headline String
-  imgUrl String
+  id        Int      @id @default(autoincrement())
+  title     String
+  category  String
+  article   String   @db.LongText
+  headline  String
+  imgUrl    String
+  createdAt DateTime @default(now())
 }

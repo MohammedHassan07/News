@@ -70,6 +70,7 @@ async function addPost(req, res) {
 
     try {
 
+        // TODO: Store the image on S3 and change the URL with S3 bucket 
         const imgURL =  'http://localhost:3000/images/' + req.file.filename
 
         const { title, article, category, headline} = req.body
